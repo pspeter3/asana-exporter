@@ -5,6 +5,7 @@ module.exports = (grunt) ->
     'copy:dev',
     'coffee:dev',
     'jade:dev',
+    'sass:dev',
     'connect:dev',
     'watch'
   ])
@@ -28,13 +29,13 @@ module.exports = (grunt) ->
           level: 'error'
         no_stand_alone_at:
           level: 'error'
-      app: ['Gruntfile.coffee', 'app/**/*.coffee', 'test/**/*.coffee']
+      app: ['Gruntfile.coffee', 'app/scripts/**/*.coffee', 'test/**/*.coffee']
     coffee:
       dev:
         options:
           sourceMap: true
         expand: true
-        cwd: 'app'
+        cwd: 'app/scripts'
         src: ['**/*.coffee']
         dest: '.tmp/js'
         ext: '.js'
@@ -47,6 +48,15 @@ module.exports = (grunt) ->
         src: ['*.jade', 'views/**/*.jade']
         dest: '.tmp'
         ext: '.html'
+    sass:
+      options:
+        includePaths: ['app/bower_components/foundation/scss']
+      dev:
+        expand: true
+        cwd: 'app/styles'
+        src: ['**/*.scss']
+        dest: '.tmp/css'
+        ext: '.css'
     connect:
       options:
         port: 3000
@@ -58,11 +68,14 @@ module.exports = (grunt) ->
             [connect.static('.tmp')]
     watch:
       coffee:
-        files: ['app/**/*.coffee']
-        tasks: ['coffeelint', 'coffee']
+        files: ['app/scripts/**/*.coffee']
+        tasks: ['coffeelint', 'coffee:dev']
       jade:
         files: ['app/*.jade', 'app/views/**/*.jade']
-        tasks: ['jade']
+        tasks: ['jade:dev']
+      sass:
+        files: ['app/styles/**/*.scss']
+        tasks: ['sass:dev']
       livereload:
         options:
           livereload: true
@@ -76,3 +89,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-jade')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-coffeelint')
+  grunt.loadNpmTasks('grunt-sass')
