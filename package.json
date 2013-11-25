@@ -1,6 +1,6 @@
 {
   "name": "asana-exporter",
-  "description": "An Asana project exporter",
+  "description": "An Asana Project Exporter",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,5 +9,15 @@
     "type": "git",
     "url": "git://github.com/pspeter3/asana-exporter.git"
   },
-  "author": "Phips Peter"
+  "author": "Phips Peter",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-coffeelint": "0.0.7",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-copy": "~0.4.1"
+  }
 }
