@@ -1,0 +1,13 @@
+{
+  "name": "asana-exporter",
+  "description": "An Asana project exporter",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pspeter3/asana-exporter.git"
+  },
+  "author": "Phips Peter"
+}
