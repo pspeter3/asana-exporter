@@ -1,11 +1,15 @@
 doctype 5
-html(lang="en", ng-app="exporter")
+html(lang="en", ng-app="asana-exporter")
   head
     meta(charset="utf-8")
     meta(name="viewport",content="width=device-width, initial-scale=1.0")
     title Asana Exporter
-    link(rel="stylesheet", href="/css/app.css")
+    link(rel="stylesheet", href="css/app.css")
   body
-    h1 ASANA
+    .ng-view
     script(src="bower_components/angular/angular.js")
-    script(src="js/app.js")
+    script(src="bower_components/angular-route/angular-route.js")
+    script(src="bower_components/ngstorage/ngStorage.js")
+    script(src="js/asana-exporter.js")
+    script(src="js/services/user.js")
+    script(src="js/controllers/auth.js")

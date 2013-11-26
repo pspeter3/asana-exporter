@@ -3,6 +3,7 @@ module.exports = (grunt) ->
   grunt.registerTask('dev', [
     'clean:dev',
     'copy:dev',
+    'coffeelint',
     'coffee:dev',
     'jade:dev',
     'sass:dev',
@@ -25,6 +26,8 @@ module.exports = (grunt) ->
       options:
         arrow_spacing:
           level: 'error'
+        indentation:
+          level: 'warn'
         no_empty_param_list:
           level: 'error'
         no_stand_alone_at:
