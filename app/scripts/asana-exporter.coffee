@@ -1,4 +1,8 @@
-angular.module('asana-exporter', ['ngRoute', 'ngStorage', 'ngCsv'])
+angular.module('asana-exporter', [
+  'ngRoute',
+  'ngStorage',
+  'ngCsv',
+  'ngProgress'])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',

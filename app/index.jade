@@ -4,6 +4,7 @@ html(lang="en", ng-app="asana-exporter")
     meta(charset="utf-8")
     meta(name="viewport",content="width=device-width, initial-scale=1.0")
     title Asana Exporter
+    link(rel="stylesheet", href="bower_components/ngprogress/ngProgress.css")
     link(rel="stylesheet", href="css/app.css")
   body
     .ng-view
@@ -11,7 +12,8 @@ html(lang="en", ng-app="asana-exporter")
     script(src="bower_components/angular-route/angular-route.js")
     script(src="bower_components/angular-sanitize/angular-sanitize.js")
     script(src="bower_components/ngstorage/ngStorage.js")
-    script(src="bower_components/ng-csv/build/ng-csv.js") 
+    script(src="bower_components/ng-csv/build/ng-csv.js")
+    script(src="bower_components/ngprogress/build/ngProgress.js") 
     script(src="js/asana-exporter.js")
     script(src="js/services/user.js")
     script(src="js/services/asana.js")
