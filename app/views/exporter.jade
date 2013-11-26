@@ -8,8 +8,26 @@ nav.top-bar(ng-controller="AuthCtrl as auth")
       li.has-form
         a.button(ng-click="auth.logout()") Logout
 
-.sidebar.small-4.columns(ng-controller="ProjectsCtrl as projects")
-  input(type="text", placeholder="Search", ng-model="search")
-  ul.side-nav
-    li(ng-repeat="project in projects.list | filter:search | orderBy:'name'")
-      a(ng-bind="project.name")
+.exporter(ng-controller="ProjectsCtrl as projects")
+  .row(ng-hide="projects.list")
+    .small-12.columns.splash
+      h1 Please wait while we fetch your projects
+  .row(ng-show="projects.list")
+    .small-12.columns
+      input(type="text", placeholder="Search", ng-model="search")
+  .row(ng-show="projects.list")
+    .small-12.columns
+      table.full
+        thead
+          tr
+            th id
+            th name
+            th action
+        tbody
+          tr(ng-repeat="project in projects.list | filter:search | orderBy:'name'")
+            td.id(ng-bind="project.id")
+            td.name(ng-bind="project.name")
+            td
+              button.button.small(ng-hide="project.tasks", ng-click="projects.select(project)") Fetch
+              button.button.small(ng-show="project.tasks", ng-csv="project.getTasks()", csv-header="projects.fields", filename="export.csv") Download
+            

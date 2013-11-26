@@ -5,6 +5,10 @@
   text-align: center;
 }
 
-.sidebar {
-  background-color: $select-bg-color;
+td.name {
+  font-weight: bold;
+}
+
+table.full {
+  width: 100%;
 }

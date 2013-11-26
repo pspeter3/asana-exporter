@@ -17,6 +17,8 @@
     "foundation": "~5.0.2",
     "angular": "~1.2.2",
     "angular-route": "~1.2.2",
-    "ngstorage": "~0.3.0"
+    "ngstorage": "~0.3.0",
+    "ng-csv": "~0.0.4",
+    "ngprogress": "~1.0.4"
   }
 }
