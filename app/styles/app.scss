@@ -1,2 +1,10 @@
 @import "normalize";
 @import "foundation";
+
+.splash {
+  text-align: center;
+}
+
+.sidebar {
+  background-color: $select-bg-color;
+}

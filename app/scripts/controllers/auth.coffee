@@ -1,6 +1,6 @@
 angular.module('asana-exporter')
   .controller 'AuthCtrl',
-    class Authtrl
+    class AuthCtrl
       constructor: (@$location, @User) ->
         @key = @User.getKey()
       login: ->
