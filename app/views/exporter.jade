@@ -1,0 +1,10 @@
+nav.top-bar(ng-controller="AuthCtrl as auth")
+  ul.title-area
+    li.name
+      h1
+        a Asana Exporter
+  section.top-bar-section
+    ul.right
+      li.has-form
+        a.button(ng-click="auth.logout()") Logout
+.listview.small-4.columns

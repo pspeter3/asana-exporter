@@ -1,0 +1,6 @@
+.splash(ng-controller="AuthCtrl as auth")
+  .row
+    .small-12.columns
+      h1 Asana Exporter
+      input(type="text", placeholder="Asana API Key", ng-model="auth.key", required)
+      a.button(ng-click="auth.login()") Get Started
