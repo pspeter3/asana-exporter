@@ -33,7 +33,6 @@ module.exports = (grunt) ->
     coffee:
       dev:
         options:
-          bare: true
           sourceMap: true
         expand: true
         cwd: 'app/scripts'
