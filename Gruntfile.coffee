@@ -55,11 +55,8 @@ module.exports = (grunt) ->
       options:
         includePaths: ['app/bower_components/foundation/scss']
       dev:
-        expand: true
-        cwd: 'app/styles'
-        src: ['**/*.scss']
-        dest: '.tmp/css'
-        ext: '.css'
+        files:
+          '.tmp/css/app.css': ['app/styles/app.scss']
     connect:
       options:
         port: 3000
@@ -82,7 +79,12 @@ module.exports = (grunt) ->
       livereload:
         options:
           livereload: true
-        files: ['.tmp/**/*.html', '.tmp/**/*.js']
+        files: [
+          '.tmp/*.html',
+          '.tmp/views/**/*.html',
+          '.tmp/js/**/*.js',
+          '.tmp/css/*.css'
+        ]
 
   # NPM Tasks
   grunt.loadNpmTasks('grunt-contrib-clean')
